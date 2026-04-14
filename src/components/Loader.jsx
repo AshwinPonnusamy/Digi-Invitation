@@ -11,7 +11,7 @@ const Loader = () => {
             <polyline points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24" id="front" />
           </svg>
         </div>
-        <p className="loading-text">Preparing your invitation...</p>
+        <p className="loading-text">Love is in the air...</p>
       </div>
     </StyledWrapper>
   );
