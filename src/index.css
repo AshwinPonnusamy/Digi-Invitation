@@ -1,0 +1,297 @@
+:root {
+  --gold: #D4AF37;
+  --gold-light: #E5C77E;
+  --cream: #FDF5E6;
+  --white: #FFFFFF;
+  --charcoal: #1F2937;
+  --text-primary: #374151;
+  --text-secondary: #4B5563;
+  --text-light: #6B7280;
+  
+  --font-serif: 'Playfair Display', serif;
+  --font-script: 'Dancing Script', cursive;
+  --font-sans: 'Montserrat', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f3f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Base Wedding Card Container */
+.wedding-card-container {
+  width: 100%;
+  max-width: 412px;
+  height: auto;
+  min-height: 917px;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.wedding-card-inner {
+  flex: 1;
+  position: relative;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Background Gradients & Textures */
+.card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  background: 
+    radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.2) 0%, transparent 70%),
+    radial-gradient(circle at 10% 10%, var(--gold-light) 0%, transparent 40%),
+    radial-gradient(circle at 90% 90%, var(--gold-light) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* Ornaments */
+.ornament {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ornament-tl {
+  top: -20px;
+  left: -30px;
+  width: 180px;
+  opacity: 0.8;
+}
+
+.ornament-tr {
+  top: 0px;
+  right: -40px;
+  width: 120px;
+  transform: rotate(-9.93deg);
+}
+
+.ornament-bl {
+  bottom: 0;
+  left: -30px;
+  width: 150px;
+  transform: rotate(100deg) scaleX(-1);
+  opacity: 0.6;
+}
+
+.ornament-br {
+  bottom: -20px;
+  right: -30px;
+  width: 180px;
+  transform: rotate(180deg);
+  opacity: 0.8;
+}
+
+/* Typography */
+.title-main {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--charcoal);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.center-image-container {
+  width: 220px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.rings-image {
+  width: 280px;
+  height: 280px;
+  filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.2));
+}
+
+.names-heading {
+  font-family: var(--font-script);
+  font-size: 46px;
+  color: var(--gold);
+  margin: 5px 0;
+  text-align: center;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.invite-text {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Event Details Table */
+.details-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 40px;
+}
+
+.detail-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.detail-item-center {
+  border-left: 1px solid #e5e7eb;
+  border-right: 1px solid #e5e7eb;
+}
+
+.detail-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-light);
+}
+
+.detail-value {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.detail-sub-value {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.date-large {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+/* Location */
+.location-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.location-link:hover {
+  opacity: 0.8;
+}
+
+.location-icon {
+  color: var(--text-secondary);
+  animation: float 2.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.location-text {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 240px;
+  line-height: 1.6;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--text-light), transparent);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+/* Music Toggle Button */
+.music-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: var(--gold);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.music-toggle:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.music-toggle svg {
+  width: 100%;
+  height: 100%;
+}
