@@ -91,7 +91,7 @@ function App() {
 
           {/* Center Illustration */}
           <div className="center-image-container animate-fade-in delay-1">
-            <img src="/assets/rings.png" className="rings-image" alt="Wedding Rings" />
+            <img src="/assets/rings.webp" className="rings-image" alt="Wedding Rings" />
           </div>
 
           {/* Names & Invite Text */}
