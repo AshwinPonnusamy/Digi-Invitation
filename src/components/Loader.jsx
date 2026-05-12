@@ -1,5 +1,4 @@
-import React from 'react';
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Loader = () => {
   return (
@@ -7,15 +6,21 @@ const Loader = () => {
       <div className="loading-container">
         <div className="loading">
           <svg width="64px" height="48px">
-            <polyline points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24" id="back" />
-            <polyline points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24" id="front" />
+            <polyline
+              points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24"
+              id="back"
+            />
+            <polyline
+              points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24"
+              id="front"
+            />
           </svg>
         </div>
         <p className="loading-text">Love is in the air...</p>
       </div>
     </StyledWrapper>
   );
-}
+};
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -33,7 +38,7 @@ const StyledWrapper = styled.div`
   }
 
   .loading-text {
-    font-family: 'Outfit', sans-serif;
+    font-family: "Outfit", sans-serif;
     color: #ff4d4f;
     font-weight: 500;
     letter-spacing: 0.1rem;
@@ -41,8 +46,13 @@ const StyledWrapper = styled.div`
   }
 
   @keyframes pulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
+    0%,
+    100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
   }
 
   .loading svg polyline {
@@ -73,6 +83,7 @@ const StyledWrapper = styled.div`
     to {
       stroke-dashoffset: 0;
     }
-  }`;
+  }
+`;
 
 export default Loader;
